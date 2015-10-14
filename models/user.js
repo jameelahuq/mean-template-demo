@@ -12,8 +12,10 @@ var UserSchema = new mongoose.Schema({
 
 // used for registration
 UserSchema.methods.setPassword = function(password){
-  this.salt = crypto.randomBytes(16).toString('hex');
-  this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+  if(password) {
+    this.salt = crypto.randomBytes(16).toString('hex');
+    this.hash = crypto.pbkdf2Sync(password, this.salt, 1000, 64).toString('hex');
+  }
 };
 
 // used for login
@@ -32,7 +34,7 @@ UserSchema.methods.generateJWT = function() {
   return jwt.sign({
     _id: this._id,
     username: this.username,
-    exp: parseInt(exp.getTime() / 1000),
+    exp: parseInt(exp.getTime() / 1000)
   }, process.env.JWT_SECRET);
 };
 

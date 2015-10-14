@@ -8,18 +8,21 @@
   "scripts": {
     "start": "node ./bin/www",
     "postinstall": "bower install",
+    "test": "mocha test/unit/user.js",
+    "bacon": "echo 'bacon'",
     "setup": "rm -rf node_modules public/vendor && touch .env && npm i && bower i"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
     "bower": "^1.5.3",
+    "chai": "^3.3.0",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "dotenv": "^1.2.0",
     "ejs": "~2.3.3",
     "express": "~4.13.1",
     "express-jwt": "^3.1.0",
-    "mongoose": "^4.1.10",
+    "mongoose": "^4.1.11",
     "morgan": "~1.6.1",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
@@ -27,5 +30,20 @@
   },
   "devDependencies": {
     "jsonwebtoken": "^5.4.0"
-  }
+  },
+  "description": "Setup:  `npm run setup` to reset and install all dependencies.",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingHouseFI/mean-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodingHouseFI/mean-template/issues"
+  },
+  "homepage": "https://github.com/CodingHouseFI/mean-template#readme"
 }
