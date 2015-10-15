@@ -26,13 +26,14 @@
     "morgan": "~1.6.1",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "supertest": "^1.1.0"
   },
   "devDependencies": {
     "jsonwebtoken": "^5.4.0"
   },
   "description": "Setup:  `npm run setup` to reset and install all dependencies.",
-  "main": "app.js",
+  "main": "bin/www",
   "directories": {
     "test": "test"
   },
