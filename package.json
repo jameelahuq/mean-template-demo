@@ -13,6 +13,7 @@
     "setup": "rm -rf node_modules public/vendor && touch .env && npm i && bower i"
   },
   "dependencies": {
+    "aws-sdk": "^2.2.10",
     "body-parser": "~1.13.2",
     "bower": "^1.5.3",
     "chai": "^3.3.0",
@@ -24,6 +25,7 @@
     "express-jwt": "^3.1.0",
     "mongoose": "^4.1.11",
     "morgan": "~1.6.1",
+    "multer": "^1.0.6",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "serve-favicon": "~2.3.0",

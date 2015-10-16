@@ -9,7 +9,7 @@ require('dotenv').load();
  */
 
 var app = require('../app');
-var debug = require('debug')('APP_NAME:server');
+var debug = require('debug')('mean-template-demo:server');
 var http = require('http');
 
 /**

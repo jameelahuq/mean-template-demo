@@ -2,6 +2,7 @@
 
 var app = angular.module('APP_NAME');
 
+
 app.controller('homeCtrl', function($scope) {
 });
 
@@ -23,4 +24,21 @@ app.controller('usersCtrl', function($scope, $state, auth){
       alert(res.message);
     });
   };
+
 });
+
+app.controller('filesCtrl', function($scope, $http) {
+  var allFiles = function() {
+    //console.log("mongo_url from ctrl:", MONGO_URL);
+    $http.get('http://localhost:3000/files')
+        .then(function(res){
+          console.log("All files loaded");
+          $scope.allFiles = res.data;
+        })
+        .catch(function(err) {
+          console.log(err)
+        });
+  };
+
+  allFiles();
+})

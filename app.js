@@ -16,6 +16,16 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+
+var corsMiddleware = function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Cache-Control, Pragma, Origin, Authorization, Content-Type, X-Requested-With");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST");
+  next();
+};
+
+app.use(corsMiddleware);
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -31,10 +41,11 @@ app.use(passport.initialize());
 
 app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
+app.use('/files', require('./routes/files'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  var err = new Error("You can't find it!!");
   err.status = 404;
   next(err);
 });

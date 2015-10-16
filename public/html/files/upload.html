@@ -1,0 +1,11 @@
+<h1>Upload</h1>
+<form action="/files" method='post' enctype="multipart/form-data">
+  <input type="file" name="photo" id="photo">
+  <button type="submit">Submit</button>
+</form>
+
+<div  class="row">
+  <div class="thumbnail" ng-repeat="file in allFiles">
+    <img ng-src="{{file.url}}">
+  </div>
+</div>

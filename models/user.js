@@ -3,11 +3,14 @@
 var mongoose = require('mongoose');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
+var Mongoose = require('mongoose');
+
 
 var UserSchema = new mongoose.Schema({
   username: {type: String, lowercase: true, unique: true},
   hash: String,
-  salt: String
+  salt: String,
+  files: [{type: Mongoose.Schema.ObjectId, ref: "File"}]
 });
 
 // used for registration
